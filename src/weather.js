@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function searchEngine(props) {
-  function showTemperature(event) {
+  let [city, setCity] = useState("");
+  let [temperature, setTemperature] = useState(props.temperature);
+
+  function handleSubmit(event) {
     event.preventDefault();
-    let temperature = (props.temperature * 9) / 5 + 32;
+    temperature((props.temperature * 9) / 5 + 32);
+    setTemperature(props.temperature);
+    setCity(event.target.value);
   }
-  function showCity(event) {
+  function cityName(event) {
     event.preventDefault();
-    let city = event.target.value;
+    city(event.target.value);
   }
   return (
-    <form onSubmit={showTemperature}>
-      <input type="search" onChange={showCity} />
+    <form onSubmit={handleSubmit}>
+      <input type="search" onChange={cityName} />
       <input type="submit" value="Search" />
     </form>
   );
