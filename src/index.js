@@ -1,17 +1,70 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import Weather from "./weather";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import ReactAnimatedWeather from "react-animated-weather";
+
+import "./App.css";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  <StrictMode>
+    <div className="App">
+      <h1>Weather</h1>
+      <h2>78 °F </h2>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <ReactAnimatedWeather
+        icon={"PARTLY_CLOUDY_DAY"}
+        color={"black"}
+        size={50}
+        animate={true}
+      />
+      <Weather />
+      <br />
+      <div class="container">
+        <div>Mon</div>
+        <ReactAnimatedWeather
+          icon={"PARTLY_CLOUDY_DAY"}
+          color={"goldenrod"}
+          size={50}
+          animate={true}
+        />
+
+        <div>Tues</div>
+
+        <ReactAnimatedWeather
+          icon={"PARTLY_CLOUDY_DAY"}
+          color={"goldenrod"}
+          size={50}
+          animate={true}
+        />
+        <div>Wed</div>
+
+        <ReactAnimatedWeather
+          icon={"PARTLY_CLOUDY_DAY"}
+          color={"goldenrod"}
+          size={50}
+          animate={true}
+        />
+        <div>Thurs</div>
+
+        <ReactAnimatedWeather
+          icon={"PARTLY_CLOUDY_DAY"}
+          color={"goldenrod"}
+          size={50}
+          animate={true}
+        />
+        <div>Fri</div>
+
+        <ReactAnimatedWeather
+          icon={"PARTLY_CLOUDY_DAY"}
+          color={"goldenrod"}
+          size={50}
+          animate={true}
+        />
+      </div>
+    </div>
+  </StrictMode>
+);
