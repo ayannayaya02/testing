@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function searchEngine(props) {
+export default function SearchEngine(props) {
   let [city, setCity] = useState("");
   let [temperature, setTemperature] = useState(props.temperature);
 
